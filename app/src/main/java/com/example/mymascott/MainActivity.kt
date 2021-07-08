@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.tvGestureDetails.text = getString(R.string.start_text)
 
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 binding.ivMascot.animate().apply {
                     duration = 400
                     rotationXBy(360f)
-                }
+                }.start()
                 binding.tvGestureDetails.text = getString(R.string.swipe_bottom)
                 super.onSwipeBottom()
             }
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                 binding.ivMascot.animate().apply {
                     duration = 400
                     rotationYBy(-360f)
-                }
+                }.start()
                 binding.tvGestureDetails.text = getString(R.string.swipe_left)
                 super.onSwipeLeft()
             }
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 binding.ivMascot.animate().apply {
                     duration = 400
                     rotationYBy(360f)
-                }
+                }.start()
                 binding.tvGestureDetails.text = getString(R.string.swipe_right)
                 super.onSwipeRight()
             }
@@ -82,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 binding.ivMascot.animate().apply {
                     duration = 400
                     rotationXBy(-360f)
-                }
+                }.start()
                 binding.tvGestureDetails.text = getString(R.string.swipe_top)
                 super.onSwipeTop()
             }
