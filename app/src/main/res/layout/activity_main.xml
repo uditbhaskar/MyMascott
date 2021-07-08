@@ -16,7 +16,7 @@
 
         <TextView
             android:id="@+id/tv_gesture_details"
-            android:text="@string/hi_i_started_off_with_my_special_ninja_move_come_on_explore_more_of_me"
+            android:text="@string/start_text"
             style="@style/tv_details_style" />
     </RelativeLayout>
 </layout>
