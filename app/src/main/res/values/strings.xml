@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyMascott</string>
+    <string name="app_name">MyMascot</string>
     <string name="todo">TODO</string>
     <string name="start_text">Hi. I started off with my special Ninja move. Come on, explore more of me.</string>
     <string name="swipe_bottom">That was Ninja swipe Bottom move.</string>
