@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="#1E1D1D">
+
+        <ImageView
+            android:id="@+id/iv_mascot"
+            android:src="@drawable/ic_avatars"
+            style="@style/iv_mascot_style"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/tv_gesture_details"
+            android:text="@string/hi_i_started_off_with_my_special_ninja_move_come_on_explore_more_of_me"
+            style="@style/tv_details_style" />
+    </RelativeLayout>
+</layout>
