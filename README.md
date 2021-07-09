@@ -1,5 +1,5 @@
 # MyMascot
-This is a simple mascot app that detects the different gestures on-screen and pans out different interactive animations accordingly. Also prompts a sound and animation event in case of app being left ideal for 10 seconds.
+This is a simple mascot app that detects the different gestures on-screen and pans out different animations accordingly. Also prompts a sound and animation event in case of app being left ideal for 10 seconds.
 
 ## Gestures supported:-
 
