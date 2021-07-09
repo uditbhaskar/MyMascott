@@ -1,5 +1,5 @@
-# MyMascott
-This is a simple fun mascott app which detects the different gestures on screen and pans out different interactive animations accordingly. Also prompts a sound and animation event in case of app being left ideal for 10 seconds.
+# MyMascot
+This is a simple fun mascot app which detects the different gestures on screen and pans out different interactive animations accordingly. Also prompts a sound and animation event in case of app being left ideal for 10 seconds.
 
 ## Gestures supported:-
 
@@ -10,7 +10,7 @@ d. Right swipe.
 e. Left Swipe.
 f. Top Swipe.
 g. Bottom Swipe.
-h. Non interaction for ten seconds.
+h. Non user interaction for ten seconds.
 
 App Interface.
 
