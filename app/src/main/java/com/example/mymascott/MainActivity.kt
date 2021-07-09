@@ -1,6 +1,7 @@
 package com.example.mymascott
 
 import android.annotation.SuppressLint
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -31,20 +32,27 @@ class MainActivity : AppCompatActivity() {
 
         handlingInactivity()
 
-
     }
+
+    //To handle no user interaction for ten seconds
 
     private fun handlingInactivity() {
         handler = Looper.myLooper()?.let { Handler(it) }!!
         runnable = Runnable {
+
+            MediaPlayer.create(this@MainActivity, R.raw.play_with_me).start()
+
             binding.ivMascot.animate().apply {
-                binding.ivMascot.startAnimation(AnimationUtils.loadAnimation(this@MainActivity, R.anim.blink))
+                binding.ivMascot.startAnimation(AnimationUtils.loadAnimation(this@MainActivity,
+                    R.anim.blink))
                 binding.tvGestureDetails.text = getString(R.string.prompt_an_event)
             }
+
         }
         startHandler()
     }
 
+    //To handle different gestures and animate accordingly
     @SuppressLint("ClickableViewAccessibility")
     private fun handleGestures() {
 
@@ -52,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onSwipeBottom() {
                 binding.ivMascot.animate().apply {
-                    duration = 400
+                    duration = 300
                     rotationXBy(360f)
                 }.start()
                 binding.tvGestureDetails.text = getString(R.string.swipe_bottom)
@@ -62,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             override fun onSwipeLeft() {
 
                 binding.ivMascot.animate().apply {
-                    duration = 400
+                    duration = 300
                     rotationYBy(-360f)
                 }.start()
                 binding.tvGestureDetails.text = getString(R.string.swipe_left)
@@ -72,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             override fun onSwipeRight() {
 
                 binding.ivMascot.animate().apply {
-                    duration = 400
+                    duration = 300
                     rotationYBy(360f)
                 }.start()
                 binding.tvGestureDetails.text = getString(R.string.swipe_right)
@@ -81,7 +89,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onSwipeTop() {
                 binding.ivMascot.animate().apply {
-                    duration = 400
+                    duration = 300
                     rotationXBy(-360f)
                 }.start()
                 binding.tvGestureDetails.text = getString(R.string.swipe_top)
@@ -113,7 +121,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
+    //For animating when mascot loads for first time
     private fun startAnimateMyMascot() {
         binding.ivMascot.animate().apply {
             duration = 1000
@@ -151,11 +159,13 @@ class MainActivity : AppCompatActivity() {
         handler.postDelayed(runnable, 10000.toLong())
     }
 
+    //Restarting timer to detect no user interaction
     override fun onResume() {
         super.onResume()
-       startHandler()
+        startHandler()
     }
 
+    //Stopping the thread callback
     override fun onStop() {
         super.onStop()
         stopHandler()

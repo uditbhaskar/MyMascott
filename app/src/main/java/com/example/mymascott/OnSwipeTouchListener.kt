@@ -7,6 +7,8 @@ import android.view.View
 import androidx.core.view.GestureDetectorCompat
 import kotlin.math.abs
 
+
+//Helper class to detect different gestures and customise them according to our use case.
 open class OnSwipeTouchListener(private val ctx: Context) : View.OnTouchListener {
 
     private val gestureDetector: GestureDetectorCompat
